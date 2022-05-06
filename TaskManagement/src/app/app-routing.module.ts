@@ -7,8 +7,9 @@ import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [{path:'signup',component : SignupComponent},
 {path:'login',component : LoginComponent},
 { path: 'index', loadChildren: () => import('./index/index.module').then(m => m.IndexModule) },
-{path:'login/signup',component : SignupComponent},
-{path: 'login/create-task', component: CreateTaskComponent}]
+{path:'signup',component : SignupComponent},
+// {path: 'create-task', component: CreateTaskComponent}
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

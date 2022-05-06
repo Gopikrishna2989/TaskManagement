@@ -5,16 +5,26 @@ import { IndexRoutingModule } from './index-routing.module';
 import { IndexComponent } from './index.component';
 import { CreateTaskComponent } from '../create-task/create-task.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskListComponent } from '../task-list/task-list.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { DatatableComponent } from '@swimlane/ngx-datatable';
+
 
 @NgModule({
   declarations: [
     IndexComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    TaskListComponent
   ],
   imports: [
+    
     CommonModule,
     IndexRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    DatatableComponent
+    
+    
   ]
 })
 export class IndexModule { }

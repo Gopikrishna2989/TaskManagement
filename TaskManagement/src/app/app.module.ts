@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+ import { DatatableComponent } from '@swimlane/ngx-datatable';
+
 
 @NgModule({
   declarations: [
@@ -14,9 +17,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignupComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    DatatableComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
