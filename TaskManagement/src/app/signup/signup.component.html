@@ -1,0 +1,145 @@
+<!-- 
+<div class="container" >
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+  
+      
+      <div class="form-group" >
+        <label for="username"><b>User Name</b></label>
+        <input type="text" id="username" class="form-control" formControlName="UserName" placeholder="Enter User Name"
+          name="User Name" required>
+        <div class="error" *ngIf="submitted && loginForm.get('UserName')?.invalid ">
+          <div *ngIf="loginForm.get('UserName')?.errors?.['required']">User Name is required</div>
+          <div *ngIf="loginForm.get('UserName')?.errors?.['minLength']">User name</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstname"><b>Full Name</b></label>
+        <input type="text" id="firstname" class="form-control" formControlName="FirstName" placeholder="Enter First Name"
+          name="First Name" required>
+        <div class="error" *ngIf="submitted && loginForm.get('FirstName')?.invalid ">
+          <div *ngIf="loginForm.get('FirstName')?.errors?.['required']">Full Name is required</div>
+          <div *ngIf="loginForm.get('FirstName')?.errors?.['pattern']">Full Name should be only characters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" class="form-control" formControlName="Email" name="email" required>
+        <div class="error" *ngIf="loginForm.get('Email')?.invalid && submitted">
+          <div *ngIf="loginForm.get('Email')?.errors?.['required']">Email is required</div>
+          <div *ngIf="loginForm.get('Email')?.errors?.['email']">Email is not valid</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phno"><b>Phone Number</b></label>
+        <input type="text" id="phno" class="form-control" formControlName="PhoneNumber" placeholder="Enter Phone Number"
+          name="Phone Number" required>
+        <div class="error" *ngIf="loginForm.get('PhoneNumber')?.invalid && submitted">
+          <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['required']">Phone Number is required</div>
+          <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['pattern']">Phone Number must be 10 digits</div>
+          <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['pattern']">characters not allowed</div>
+  
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" id="psw" class="form-control" formControlName="Password" placeholder="Enter Password"
+          name="psw" required>
+        <div class="error" *ngIf="loginForm.get('Password')?.invalid && submitted">
+          <div *ngIf="loginForm.get('Password')?.errors?.['required']">Password is required</div>
+          
+        </div>
+      </div>
+  
+      
+      <div class="clearfix">
+  
+       <a href="http://localhost:4200/login/signup"> <button type="submit" class="btn btn-primary">Sign Up</button></a>
+  
+      </div>
+  
+    </form>
+  </div> -->
+  <section class="vh-100 gradient-custom cn">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                            <p class="text-white-50 mb-5">Please Enter Your Details</p>
+                            <form [formGroup]="loginForm" (ngSubmit)="submit()">
+  
+      
+                              <div class="form-group form-outline form-white mb-4" >
+                                <label class="form-label fl" for="username"><b>User Name</b></label>
+                                <input type="text" id="username" class="form-control form-control-lg" formControlName="UserName" placeholder="Enter User Name"
+                                  name="User Name" required>
+                                <div class="error" *ngIf="submitted && loginForm.get('UserName')?.invalid ">
+                                  <div *ngIf="loginForm.get('UserName')?.errors?.['required']">User Name is required</div>
+                                  <div *ngIf="loginForm.get('UserName')?.errors?.['minLength']">User name</div>
+                                </div>
+                              </div>
+                              <div class="form-group form-outline form-white mb-4">
+                                <label for="firstname" class="form-label"><b>Full Name</b></label>
+                                <input type="text" id="firstname" class="form-control form-control-lg" formControlName="FirstName" placeholder="Enter Full Name"
+                                  name="First Name" required>
+                                <div class="error" *ngIf="submitted && loginForm.get('FirstName')?.invalid ">
+                                  <div *ngIf="loginForm.get('FirstName')?.errors?.['required']">Full Name is required</div>
+                                  <div *ngIf="loginForm.get('FirstName')?.errors?.['pattern']">Full Name should be only characters</div>
+                                </div>
+                              </div>
+                              <div class="form-group form-outline form-white mb-4">
+                                <label for="email" class="form-label"><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" class="form-control form-control-lg" formControlName="Email" name="email" required>
+                                <div class="error" *ngIf="loginForm.get('Email')?.invalid && submitted">
+                                  <div *ngIf="loginForm.get('Email')?.errors?.['required']">Email is required</div>
+                                  <div *ngIf="loginForm.get('Email')?.errors?.['email']">Email is not valid</div>
+                                </div>
+                              </div>
+                              <div class="form-group form-outline form-white mb-4">
+                                <label for="phno" class="form-label"><b>Phone Number</b></label>
+                                <input type="text" id="phno" class="form-control form-control-lg" formControlName="PhoneNumber" placeholder="Enter Phone Number"
+                                  name="Phone Number" required>
+                                <div class="error" *ngIf="loginForm.get('PhoneNumber')?.invalid && submitted">
+                                  <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['required']">Phone Number is required</div>
+                                  <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['pattern']">Phone Number must be 10 digits</div>
+                                  <div *ngIf="loginForm.get('PhoneNumber')?.errors?.['pattern']">characters not allowed</div>
+                          
+                                </div>
+                              </div>
+                              <div class="form-group form-outline form-white mb-4">
+                                <label for="psw" class="form-label"><b>Password</b></label>
+                                <input type="password" id="psw" class="form-control form-control-lg" formControlName="Password" placeholder="Enter Password"
+                                  name="psw" required>
+                                <div class="error" *ngIf="loginForm.get('Password')?.invalid && submitted">
+                                  <div *ngIf="loginForm.get('Password')?.errors?.['required']">Password is required</div>
+                                  
+                                </div>
+                              </div>
+                          
+                              
+                              <div class="clearfix">
+                          
+                              
+                          
+                              </div>
+                          
+                            </form>
+                            
+                            <button class="btn btn-outline-light btn-lg px-5 btn"  (click)="submit()" type="submit">Signup</button>
+
+                            
+
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

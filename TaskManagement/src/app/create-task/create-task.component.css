@@ -1,0 +1,33 @@
+.fm{
+    margin-top: 30px;
+}
+button{
+    text-align: center;
+   margin-top: 30px;
+   margin-left: 100px;
+   padding: 4px;
+}
+.cn{
+    margin-left: 470px;
+    margin-top: 40px;
+  font-family: 'Times New Roman', Times, serif;
+ 
+  
+
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    font-size: 40px;
+    color: white;
+    
+}
+.inp{
+    width: 300px;
+    border-radius: 3px;
+}
+.error{
+    color: red;
+}

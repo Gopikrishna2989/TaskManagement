@@ -1,0 +1,95 @@
+<div class="container-fluid cn ">
+    <form [formGroup]="taskForm" (ngSubmit)="createTask()">
+        <div class="col-3">
+
+            <div class="form-group fm">
+                <label class=" " for="tname">Task Name</label>
+                <input type="text" class="inp" id="tname" formControlName="TaskName" placeholder="Task Name" />
+                <div class="error" *ngIf="taskForm.get('TaskName')?.invalid && taskForm.get('TaskName')?.touched">
+                    <div *ngIf="taskForm.get('TaskName')?.errors?.['required']">Task Name is required</div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-3">
+
+            <div class="form-group btn-lg fm">
+                <label class=" " for="tstatus">Task Status</label>
+                <select class="inp" formControlName="TaskStatus" name="" id="tstatus">
+                    <option value="To-do">To-do</option>
+                    <option value="In-progress">In-progress</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Blocked">Blocked</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <div class="error" *ngIf="taskForm.get('TaskStatus')?.invalid && taskForm.get('TaskStatus')?.touched">
+                    <div *ngIf="taskForm.get('TaskStatus')?.errors?.['required']">Select Task Status</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+
+            <div class="form-group fm">
+                <label class=" " for="ta">Assign To</label>
+                <select class="inp btn-lg" formControlName="AssignStatus" name="" id="ta">
+                    <option value="Gopi Krishna">Gopi Krishna</option>
+                    <option value="Nizam">Nizam</option>
+                    <option value="Manohar">Manohar</option>
+                    <option value="Muqeeth">Muqeeth</option>
+                </select>
+                <div class="error"
+                    *ngIf="taskForm.get('AssignStatus')?.invalid && taskForm.get('AssignStatus')?.touched">
+                    <div *ngIf="taskForm.get('AssignStatus')?.errors?.['required']">Select Assign Status</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+
+            <div class="form-group fm">
+                <label class="" for="tdesc">Task Description</label>
+                <textarea name="" class="inp" id="tdesc" formControlName="TaskDescription" cols="40"
+                    rows="1"></textarea>
+                <div class="error"
+                    *ngIf="taskForm.get('TaskDescription')?.invalid && taskForm.get('TaskDescription')?.touched">
+                    <div *ngIf="taskForm.get('TaskDescription')?.errors?.['required']">Task Description is
+                        required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+
+            <div class="form-group fm">
+                <label class="" for="tsd">Task Start Date</label>
+                <input type="date" class="inp" id="tsd" formControlName="TaskStartDate" name="trip-start"
+                    value="2022-05-04" min="2022-01-01" max="2022-12-31">
+                <div class="error"
+                    *ngIf="taskForm.get('TaskStartDate')?.invalid && taskForm.get('TaskStartDate')?.touched">
+                    <div *ngIf="taskForm.get('TaskStartDate')?.errors?.['required']">Task Start Date is
+                        required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+
+            <div class="form-group fm">
+                <label class=" " for="ted">Task End Date</label>
+                <input type="date" class="inp" id="TaskEndDate" formControlName="TaskEndDate" name="trip-start"
+                    value="2022-05-04" min="2022-01-01" max="2022-12-31">
+                <div class="error" *ngIf="taskForm.get('TaskEndDate')?.invalid && taskForm.get('TaskEndDate')?.touched">
+                    <div *ngIf="taskForm.get('TaskEndDate')?.errors?.['required']">Task End Date is
+                        required</div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Create Task</button>
+    </form>
+
+
+</div>
