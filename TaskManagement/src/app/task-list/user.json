@@ -1,0 +1,10 @@
+{"posts" : [{
+    "id":1,
+    "title":"Angular",
+    "realeaseDate":"may 5th,2022"
+},
+{ "id":2,
+    "title":"Angular2",
+    "realeaseDate":"may 6th,2022"}
+]
+}

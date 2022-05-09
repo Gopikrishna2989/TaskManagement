@@ -22,5 +22,6 @@ export class CreateTaskComponent implements OnInit {
   })
   createTask(){
     console.log(this.taskForm.value);
+    
   }
 }
