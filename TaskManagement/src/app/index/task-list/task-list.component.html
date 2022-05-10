@@ -1,8 +1,31 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class=".col-3">
+      <div class="material cn">
+        <ngx-datatable style="border-color:#600080;border-radius:10px;" [count]=8 [limit]="5" [headerHeight]="50"
+          [rowHeight]="50" [footerHeight]="50" class="material container" [rows]="rows" [columns]="columns">
 
-
-<div class="material cn">
-    <ngx-datatable style="border-color:#600080;border-radius:10px;" [count]=8 [limit]="5"  [headerHeight]="50" [rowHeight]="50"  [footerHeight]="50" [width]="200" class="material container" [rows]="rows" [columns]="columns"> 
-    
-    </ngx-datatable>
+        </ngx-datatable>
+      </div>
+    </div>
+    <div class=".col-3">
+      <app-create-task></app-create-task>
+    </div>
   </div>
- 
+</div> -->
+<div class="container-fluid">
+  <div class="row">
+    
+      <div class="material cn main n">
+        <ngx-datatable style="border-color:#600080;border-radius:10px; text-align:center;" [count]=8 [limit]="5"
+          [headerHeight]="50" [rowHeight]="50" [footerHeight]="50" class="material container" [rows]="rows"
+          [columns]="columns">
+
+        </ngx-datatable>
+      </div>
+    
+    <div class="side n">
+      <app-create-task></app-create-task>
+    </div>
+  </div>
+</div>

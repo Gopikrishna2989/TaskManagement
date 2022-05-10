@@ -7,9 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
  import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { TaskListComponent } from './index/task-list/task-list.component';
+ 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//  import { DatatableComponent } from '@swimlane/ngx-datatable';
 
 
 
@@ -18,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    TaskListComponent
   ],
   imports: [
     
