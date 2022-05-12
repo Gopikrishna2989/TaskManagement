@@ -1,19 +1,7 @@
-.cn{
-    
-   width: 800px;
-    margin-top: 80px;
-
-}
-.side{
-  margin-left: 450px;
-  float: top;
-  
-    
-   
-}
 .main{
-    
+  margin-top:50px;
+  width: 800px;
 }
-.n{
-    
+*{
+  font-family: 'Times New Roman', Times, serif;
 }

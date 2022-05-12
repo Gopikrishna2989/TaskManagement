@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 public submitted=false;
-  constructor() { }
+  constructor(private http:HttpClient,private service:ListService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +24,13 @@ public submitted=false;
   }) 
 submit(){
   this.submitted=true;
-    console.log(this.loginForm.value)
+    console.log(this.loginForm.value);
+    const body=this.loginForm.value;
+   // this.http.post('http://localhost:3000/SignUpDetails',this.loginForm.value).subscribe((result)=>console.log("result",result))
+this.service.postUsers(body).subscribe((response)=>{
+  
+  console.log(response)
+})
 
 }
 }

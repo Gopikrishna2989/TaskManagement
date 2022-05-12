@@ -16,16 +16,54 @@
 <div class="container-fluid">
   <div class="row">
     
-      <div class="material cn main n">
-        <ngx-datatable style="border-color:#600080;border-radius:10px; text-align:center;" [count]=8 [limit]="5"
+      <div class="col-8 main">
+        <ngx-datatable style="border-color:#600080;border-radius:10px;" [count]=8 [limit]="5"
           [headerHeight]="50" [rowHeight]="50" [footerHeight]="50" class="material container" [rows]="rows"
           [columns]="columns">
-
+          <!-- <ngx-datatable-column  name="Task Name" [width]="120">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.TaskName}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Task Status" [width]="120">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.TaskStatus}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Assign Task" [width]="120">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.AssignStatus}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Task Description" [width]="120">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.TaskDescription}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Task Start Date" [width]="120">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.TaskStartDate}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Task End Date" [width]="140">
+            <ng-template  let-value="value" ngx-datatable-cell-template>
+              {{msg?.TaskEndDate}}
+            </ng-template>
+          </ngx-datatable-column> -->
+        
+        <ngx-datatable-column name="Task Status" [width]="120">
+          <ng-template *ngFor="let row of msg" let-value="value" ngx-datatable-cell-template>
+            {{row?.TaskStatus}}
+          </ng-template>
+        </ngx-datatable-column>
         </ngx-datatable>
+
+        
       </div>
     
-    <div class="side n">
-      <app-create-task></app-create-task>
+    <div class="col-4 side">
+      <app-create-task (newItemEvent)="sampleMethod($event)"></app-create-task>
     </div>
   </div>
 </div>
+

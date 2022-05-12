@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -22,6 +22,9 @@ export class CreateTaskComponent implements OnInit {
   })
   createTask(){
     console.log(this.taskForm.value);
+    this.newItemEvent.emit(this.taskForm.value);
+    
     
   }
+  @Output() newItemEvent = new EventEmitter<string>();
 }

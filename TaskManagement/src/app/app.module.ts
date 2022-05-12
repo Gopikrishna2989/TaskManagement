@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
  import { NgxDatatableModule } from '@swimlane/ngx-datatable';
- 
+ import{HttpClientModule} from'@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -25,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     NgxDatatableModule,
     BrowserAnimationsModule,
-    // DatatableComponent
+    HttpClientModule
     
   ],
   providers: [],
