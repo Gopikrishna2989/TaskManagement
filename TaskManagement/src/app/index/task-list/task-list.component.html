@@ -20,42 +20,38 @@
         <ngx-datatable style="border-color:#600080;border-radius:10px;" [count]=8 [limit]="5"
           [headerHeight]="50" [rowHeight]="50" [footerHeight]="50" class="material container" [rows]="rows"
           [columns]="columns">
-          <!-- <ngx-datatable-column  name="Task Name" [width]="120">
-            <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.TaskName}}
+         <ngx-datatable-column name="Task Name" [width]="120" prop="TaskName">
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{value}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Task Status" [width]="120">
+           <ngx-datatable-column name="Task Status" [width]="120"prop='TaskStatus'>
             <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.TaskStatus}}
+              {{value}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Assign Task" [width]="120">
+          <ngx-datatable-column name="Assign Task" [width]="120" prop='AssignStatus'>
             <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.AssignStatus}}
+              {{value}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Task Description" [width]="120">
+          <ngx-datatable-column name="Task Description" [width]="120"prop='TaskDescription'>
             <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.TaskDescription}}
+              {{value}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Task Start Date" [width]="120">
+          <ngx-datatable-column name="Task Start Date" [width]="120"prop='TaskStartDate'>
             <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.TaskStartDate}}
+              {{value}}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Task End Date" [width]="140">
+          <ngx-datatable-column name="Task End Date" [width]="140"prop='TaskEndDate'>
             <ng-template  let-value="value" ngx-datatable-cell-template>
-              {{msg?.TaskEndDate}}
+              {{value}}
             </ng-template>
-          </ngx-datatable-column> -->
+          </ngx-datatable-column> 
         
-        <ngx-datatable-column name="Task Status" [width]="120">
-          <ng-template *ngFor="let row of msg" let-value="value" ngx-datatable-cell-template>
-            {{row?.TaskStatus}}
-          </ng-template>
-        </ngx-datatable-column>
+      
         </ngx-datatable>
 
         

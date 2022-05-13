@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
           
           alert('login success');
           this.isCheck=true;
-          this.router.navigate(['create-task']);
+          this.router.navigate(['index/task-list']);
 
         }
        
@@ -70,3 +70,4 @@ export class LoginComponent implements OnInit {
 
   }
 }
+

@@ -6,6 +6,7 @@ import { find, Observable } from 'rxjs';
 })
 export class ListService {
 private _url:any='http://localhost:3000/SignUpDetails'
+private _taskUrl='http://localhost:3000/taskDetails'
   constructor(private http:HttpClient) { }
  
   postUsers(body: any):Observable<object>{
@@ -13,5 +14,11 @@ private _url:any='http://localhost:3000/SignUpDetails'
   }
   matchUser():Observable<object>{
  return this.http.get(this._url)
+  }
+  PostTaskData(task:any):Observable<object>{
+   return this.http.post(this._taskUrl,task)
+  }
+  GetTaskData():Observable<object>{
+    return this.http.get(this._taskUrl)
   }
 }
