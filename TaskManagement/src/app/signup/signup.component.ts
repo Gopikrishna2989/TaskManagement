@@ -31,7 +31,7 @@ submit(){
 this.service.postUsers(body).subscribe((response)=>{
   
   console.log(response)
-  alert('sign up success')
+ 
 })
 
 this.roter.navigate(['login'])

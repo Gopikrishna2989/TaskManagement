@@ -23,7 +23,7 @@ export class CreateTaskComponent implements OnInit {
   createTask(){
     console.log(this.taskForm.value);
     this.newItemEvent.emit(this.taskForm.value);
-    // this.
+    
     
     
   }

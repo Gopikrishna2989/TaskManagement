@@ -51,8 +51,9 @@ export class LoginComponent implements OnInit {
       for (let i = 0; i < this.msg.length; i++) {
         if (this.msg[i]?.Email === this.logForm.value.email && this.msg[i]?.Password === this.logForm.value.pass) {
           
-          alert('login success');
+          
           this.isCheck=true;
+          
           this.router.navigate(['index/task-list']);
 
         }

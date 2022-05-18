@@ -9,6 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
  import { NgxDatatableModule } from '@swimlane/ngx-datatable';
  import{HttpClientModule} from'@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalComponent } from './modal/modal.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+  
 
 
 
@@ -17,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     LoginComponent,
     SignupComponent,
+    ModalComponent,
   ],
   imports: [
     
@@ -25,7 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     NgxDatatableModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
+    
     
   ],
   providers: [],
