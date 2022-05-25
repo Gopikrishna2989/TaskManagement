@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CreateTaskComponent } from '../index/create-task/create-task.component';
 import { ListService } from '../list.service';
-import { find } from 'rxjs';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +14,7 @@ export class LoginComponent implements OnInit {
   public submitted = false;
   public msg: any;
   public isCheck=false;
+ 
   constructor(private http: HttpClient, private router: Router, private service: ListService) { }
 
   ngOnInit(): void {
@@ -51,13 +51,15 @@ export class LoginComponent implements OnInit {
       for (let i = 0; i < this.msg.length; i++) {
         if (this.msg[i]?.Email === this.logForm.value.email && this.msg[i]?.Password === this.logForm.value.pass) {
           
-          
+          Swal.fire('Login Succesfully Completed');
           this.isCheck=true;
-          
-          this.router.navigate(['index/task-list']);
+          break;
 
         }
        
+      }
+      if(this.isCheck==true){
+       this.router.navigate(['index'])
       }
       
       if(this.isCheck==false){
@@ -65,10 +67,17 @@ export class LoginComponent implements OnInit {
       }
 
     });
+     
+  
 
 
 
 
   }
+  
+  
 }
+
+
+
 

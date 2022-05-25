@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +9,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-emp:any
-  constructor() {
-    this.emp=[];
+employeeObject:any
+employeeDisplay:any
+@ViewChild('closeBtn') closeBtn: ElementRef | undefined;
+  constructor(private service:ListService) {
+   
+    this.getInitialCall();
    }
 
   ngOnInit(): void {
@@ -21,11 +26,22 @@ EmployeeForm=new FormGroup({
   Dob:new FormControl(null,Validators.required),
 });
 submit(){
-  this.emp.push(this.EmployeeForm.value)
+  this.employeeObject=this.EmployeeForm.value;
+  // post employee data
+  this.service.postDataToEmployeeDetails(this.employeeObject).subscribe()
   alert('Employee Added Successfully')
-  
-  
+  this.closeModal();
+  this.getInitialCall()
+ 
   
 }
-
+getInitialCall(){
+this.service.getEmployeeDetails().subscribe(result=>{
+  this.employeeDisplay=result;
+})
+}
+private closeModal(): void {
+  this.closeBtn?.nativeElement.click();
+}
+ 
 }

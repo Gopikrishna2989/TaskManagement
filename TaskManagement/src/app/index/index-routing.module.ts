@@ -4,8 +4,10 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { IndexComponent } from './index.component';
 
-const routes: Routes = [{ path: '', redirectTo:'task-list',pathMatch:'full' },
-{ path: 'create-task', component: CreateTaskComponent },
+const routes: Routes = [
+  {path: '' , component: IndexComponent},
+  // { path: '', redirectTo:'task-list',pathMatch:'full' },
+// { path: 'create-task', component: CreateTaskComponent },
 { path: 'task-list', component: TaskListComponent },
 
 ];

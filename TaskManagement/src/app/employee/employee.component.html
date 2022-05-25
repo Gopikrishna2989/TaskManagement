@@ -18,8 +18,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let arr of emp"  >
-                    <th scope="row">1</th>
+                <tr *ngFor="let arr of employeeDisplay; let i=index"  >
+                    <th scope="row">{{i+1}}</th>
                     <td>{{arr.name}}</td>
                     <td>{{arr.username}}</td>
                     <td>{{arr.password}}</td>
@@ -85,7 +85,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  #closeBtn>Close</button>
                 <button type="submit" class="btn btn-primary" [disabled]="EmployeeForm.invalid" (click)="submit()">Submit</button>
             </div>
         </div>

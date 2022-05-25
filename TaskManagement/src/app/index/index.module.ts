@@ -8,14 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { TaskListComponent } from '../task-list/task-list.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TaskListComponent } from './task-list/task-list.component';
-//import { DatatableComponent } from '@swimlane/ngx-datatable';
-
 
 @NgModule({
   declarations: [
     IndexComponent,
     CreateTaskComponent,
-    TaskListComponent
+    TaskListComponent,
+    
+   
+    
   ],
   imports: [
     

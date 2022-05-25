@@ -9,55 +9,39 @@
 
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                             <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                            <form [formGroup]="logForm" >
+                            <form [formGroup]="logForm">
                                 <div class="form-group form-outline form-white mb-4 fw-bold">
                                     <label class="form-label " for="typeEmailX">Email</label>
-                                    <input type="email" id="typeEmailX" class="form-control form-control-lg"  placeholder="Enter Email"
-                                        formControlName="email" />
-                                    <div class="error" *ngIf="logForm.get('email')?.invalid && logForm.get('email')?.touched">
+                                    <input type="email" id="typeEmailX" class="form-control form-control-lg"
+                                        placeholder="Enter Email" formControlName="email" />
+                                    <div class="error"
+                                        *ngIf="logForm.get('email')?.invalid && logForm.get('email')?.touched">
                                         <div *ngIf="logForm.get('email')?.errors?.['required']">Email is required</div>
                                         <div *ngIf="logForm.get('email')?.errors?.['email']">Email is not valid</div>
-                                      </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group form-outline form-white mb-4 fw-bold">
                                     <label class="form-label" for="typePasswordX">Password</label>
-                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Enter Password"
-                                        formControlName="pass" />
-                                    
-                                    <div class="error" *ngIf="logForm.get('pass')?.invalid && logForm.get('pass')?.touched">
-                                        <div *ngIf="logForm.get('pass')?.errors?.['required']">Password is required</div>
-                                        
-                                      </div>
+                                    <input type="password" id="typePasswordX" class="form-control form-control-lg"
+                                        placeholder="Enter Password" formControlName="pass" />
+
+                                    <div class="error"
+                                        *ngIf="logForm.get('pass')?.invalid && logForm.get('pass')?.touched">
+                                        <div *ngIf="logForm.get('pass')?.errors?.['required']">Password is required
+                                        </div>
+
+                                    </div>
                                 </div>
                             </form>
-                            
-                            <button class="btn btn-outline-light btn-lg px-5" (click)="login()"  [disabled]="logForm.invalid" type="submit">Login</button>
- <!-- Modal -->
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        Login Successfully complated
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-                            
 
-                        </div>
+                            <button class="btn btn-outline-light btn-lg px-5"  (click)="login()"
+                                [disabled]="logForm.invalid" type="submit">Login</button>
+                                                   </div>
 
                         <div>
-                            <p class="mb-0">Don't have an account? <span routerLink="/signup" class="text-white-50 fw-bold" 
-                                   >Sign Up</span>
+                            <p class="mb-0">Don't have an account? <span routerLink="/signup"
+                                    class="text-white-50 fw-bold">Sign Up</span>
                             </p>
                         </div>
 
@@ -67,5 +51,3 @@
         </div>
     </div>
 </section>
-
-

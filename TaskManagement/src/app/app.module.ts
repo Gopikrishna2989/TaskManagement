@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './modal/modal.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
   
 
 
@@ -22,6 +23,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     SignupComponent,
     ModalComponent,
+  
   ],
   imports: [
     

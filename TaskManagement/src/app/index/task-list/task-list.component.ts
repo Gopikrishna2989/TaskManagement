@@ -12,7 +12,9 @@ export class TaskListComponent implements OnInit {
   
   rows :any
   columns = [{ prop: 'TaskName' },{ prop: 'TaskStatus' },{ prop: 'AssignStatus' },{ prop: 'TaskDescription' },{ prop: 'TaskStartDate' },{ prop: 'TaskEndDate' },];
-  constructor(private service:ListService) { }
+  constructor(private service:ListService) { 
+    
+  }
 
   ngOnInit(): void {
     this.getData()
