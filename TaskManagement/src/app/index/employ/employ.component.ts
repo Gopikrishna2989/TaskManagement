@@ -1,15 +1,17 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { ListService } from '../list.service';
-
+import { ListService } from 'src/app/list.service';
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  selector: 'app-employ',
+  templateUrl: './employ.component.html',
+  styleUrls: ['./employ.component.css']
 })
-export class EmployeeComponent implements OnInit {
-employeeObject:any
+export class EmployComponent implements OnInit {
+//ngx data table
+columns=[{ prop: 'name' },{ prop: 'username' },{ prop: 'Dob' },]
+rows:any
+  employeeObject:any
 employeeDisplay:any
 @ViewChild('closeBtn') closeBtn: ElementRef | undefined;
   constructor(private service:ListService) {
@@ -36,12 +38,13 @@ submit(){
   
 }
 getInitialCall(){
-this.service.getEmployeeDetails().subscribe(result=>{
-  this.employeeDisplay=result;
+this.service.getEmployeeDetails().subscribe((result: any)=>{
+  this.rows=result;
 })
 }
 private closeModal(): void {
   this.closeBtn?.nativeElement.click();
 }
- 
+
+
 }

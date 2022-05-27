@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CreateTaskComponent } from '../index/create-task/create-task.component';
 import { ListService } from '../list.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +14,9 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   public submitted = false;
   public msg: any;
-  public isCheck=false;
+  public isCheck = false;
  
+
   constructor(private http: HttpClient, private router: Router, private service: ListService) { }
 
   ngOnInit(): void {
@@ -27,55 +29,45 @@ export class LoginComponent implements OnInit {
   login() {
     this.submitted = true;
     console.log(this.logForm.value)
-                  //withou service
-    // this.http.get<any>('http://localhost:3000/SignUpDetails')
-    //   .subscribe(res => {
-    //     const user = res.find((a: any) => {
-    //       return a.Email === this.logForm.value.email && a.Password === this.logForm.value.pass
-    //     });
-    //     if(user){
-    //       alert('login success');
-    //       this.logForm.reset();
-    //       this.router.navigate(['create-task'])
-    //     }
-    //     else{
-    //       alert('user not found');
-    //     }
-    //   },err=>{
-    //     alert('something went wrong');
-    //   })
+
 
     this.service.matchUser().subscribe(res => {
       console.log("res", res);
       this.msg = res;
+
       for (let i = 0; i < this.msg.length; i++) {
         if (this.msg[i]?.Email === this.logForm.value.email && this.msg[i]?.Password === this.logForm.value.pass) {
-          
+
           Swal.fire('Login Succesfully Completed');
-          this.isCheck=true;
+          this.isCheck = true;
+          //send user name to index
+          console.log("user",this.msg?.[i].UserName)
+          
+         
+        sessionStorage.setItem('username',this.msg?.[i].UserName)
+          //send user name to index
           break;
 
         }
-       
+
       }
-      if(this.isCheck==true){
-       this.router.navigate(['index'])
+      if (this.isCheck == true) {
+        this.router.navigate(['index'])
       }
-      
-      if(this.isCheck==false){
+
+      if (this.isCheck == false) {
         alert('user not found')
       }
 
     });
-     
-  
+
 
 
 
 
   }
-  
-  
+
+
 }
 
 

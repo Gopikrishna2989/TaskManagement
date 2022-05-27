@@ -8,8 +8,10 @@ import { ListService } from 'src/app/list.service';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-
-  constructor(private service:ListService) { }
+employees:any
+  constructor(private service:ListService) {
+    this.getEmployees()
+   }
 
   ngOnInit(): void {
   }
@@ -28,4 +30,10 @@ export class CreateTaskComponent implements OnInit {
     
   }
   @Output() newItemEvent = new EventEmitter<string>();
+  //get employees from employee component
+  getEmployees(){
+    this.service.getEmployeeDetails().subscribe((result)=>{
+      this.employees=result;
+    })
+  }
 }

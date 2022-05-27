@@ -1,0 +1,25 @@
+.contain{
+    width: 100%;
+    height: 100%;
+    border-width: 1px solid black;
+    background-color: aliceblue;
+}
+.head{
+    height: 10%;
+    border: 1px solid black;
+
+}
+.min-con{
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+.side{
+    height: 100%;
+    border: 1px solid black;
+
+}
+.main{
+    height: 100%;
+    border: 1px solid black;
+}

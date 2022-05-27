@@ -1,0 +1,83 @@
+
+<div class="main justify-content-center align-items-center mt-5">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-sm">Add
+        Employee</button>
+<ngx-datatable style="border-color:#600080;border-radius:10px;" [count]=8 [limit]="5"
+          [headerHeight]="50" [rowHeight]="50" [footerHeight]="50" class="material container" [rows]="rows"
+          [columns]="columns">
+          <ngx-datatable-column name="Name" [width]="120" prop="name">
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="User Name" [width]="120" prop="username">
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Date Of Birth" [width]="120" prop="Dob">
+            <ng-template ngx-datatable-cell-template let-value="value" let-row="row">
+              {{value}}
+            </ng-template>
+          </ngx-datatable-column>
+</ngx-datatable>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Employee Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="EmployeeForm">
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="Name" placeholder="Enter Name"
+                            formControlName="name">
+                            <div class="error" *ngIf="EmployeeForm.get('name')?.invalid && EmployeeForm.get('name')?.touched">
+                                <div *ngIf="EmployeeForm.get('name')?.errors?.['required']">Name is required</div>
+                                
+                              </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter User Name"
+                            formControlName="username">
+                            <div class="error" *ngIf="EmployeeForm.get('username')?.invalid && EmployeeForm.get('username')?.touched">
+                                <div *ngIf="EmployeeForm.get('username')?.errors?.['required']">User Namee is required</div>
+                                
+                              </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pas">Enter Password</label>
+                        <input type="password" class="form-control" id="pas" placeholder="Enter Password"
+                            formControlName="password">
+                            <div class="error" *ngIf="EmployeeForm.get('password')?.invalid && EmployeeForm.get('password')?.touched">
+                                <div *ngIf="EmployeeForm.get('password')?.errors?.['required']">Password is required</div>
+                                
+                              </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DOB">DOB</label>
+                        <input type="date" class="form-control" id="DOB" placeholder="Enter Date Of Birth"
+                            formControlName="Dob">
+                            <div class="error" *ngIf="EmployeeForm.get('Dob')?.invalid && EmployeeForm.get('Dob')?.touched">
+                                <div *ngIf="EmployeeForm.get('Dob')?.errors?.['required']">Date Of Birth is required</div>
+                                
+                              </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  #closeBtn>Close</button>
+                <button type="submit" class="btn btn-primary" [disabled]="EmployeeForm.invalid" (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

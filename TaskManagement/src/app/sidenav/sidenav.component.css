@@ -1,0 +1,10 @@
+.text:hover{
+color: blue;
+cursor: pointer;
+}
+.text{
+    font-size: 20px
+}
+.active{
+    color: blue;
+}

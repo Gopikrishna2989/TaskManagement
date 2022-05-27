@@ -3,10 +3,15 @@
 }
 .error{
     color: red;
+    font-size: 10px;
 }
 .btn{
-    margin-left: 65px;
+    margin-left: 63px;
+    margin-top: 3px;
 }
 .message{
     color: black;
+}
+.form-control{
+   
 }
