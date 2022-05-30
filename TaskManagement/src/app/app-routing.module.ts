@@ -15,7 +15,6 @@ const routes: Routes = [{path:'signup',component : SignupComponent},
 // {path:'create-task',component : CreateTaskComponent},
 // {path:'task-list',component : TaskListComponent},
 {path:'modal',component : ModalComponent},
-{ path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 
 
 ]

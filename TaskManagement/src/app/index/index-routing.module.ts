@@ -12,6 +12,7 @@ const routes: Routes = [
     { path: 'task-list', component: TaskListComponent },
     { path: 'employee', component: EmployComponent },
     { path: '', component: WelcomeComponent },
+    
 
 
   ]},

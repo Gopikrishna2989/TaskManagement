@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{HttpClient, HttpClientModule} from'@angular/common/http';
 import { find, Observable, Subject } from 'rxjs';
+import { id } from '@swimlane/ngx-datatable';
 @Injectable({
   providedIn: 'root'
 })
@@ -30,5 +31,7 @@ private _sendUserToIndexUrl='http://localhost:3000/General'
    return this.http.get(this._employeeUrl)
 
   }
- 
+  putDataToEmployeeDetails(employeeObject: any,id:number):Observable<object>{
+    return this.http.put(this._employeeUrl+'/'+id,employeeObject)
+  }
 }
